@@ -1,6 +1,6 @@
-// Service worker de Nextren: guarda la app para que abra sin conexión.
+﻿// Service worker de Nextren: guarda la app para que abra sin conexión.
 // Al cambiar cualquier archivo de la app, subir el número de VERSION.
-const VERSION = "nextren-v8";
+const VERSION = "nextren-v9";
 const FILES = ["./", "./index.html", "./style.css", "./app.js", "./theme.js", "./festivos.js", "./i18n.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
