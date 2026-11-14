@@ -12,7 +12,9 @@
 - Tema claro/oscuro, idioma ES/EN, cabecera rehecha (reloj al centro, tres botones iguales).
 - CV y README del perfil con Nextren; `preview.png` subido a 8 repos; vídeo promo con voz Ryan y datos de pago difuminados.
 - **Prueba sin conexión** en Chrome de escritorio: servidor local, service worker instalado, servidor apagado de verdad, recarga →
-  3 tarjetas, 50 filas, estilos, i18n y festivos cargados; control negativo (página inexistente) falla como debe. **Falta el móvil real.**
+  3 tarjetas, 50 filas, estilos, i18n y festivos cargados; control negativo (página inexistente) falla como debe.
+  **Confirmado en el móvil real** (Nando, 11:51, sin datos ni wifi): abre con la cabecera nueva y muestra 12:10 «sale en 19 min»,
+  es decir, recalcula con la hora del teléfono (cortó la conexión a las 11:45, cuando el próximo habría sido el de las 11:50).
 - SEO y redes: `description`, canonical, 11 etiquetas `og`, Twitter Card, JSON-LD, `og-image.png` 1200×630 (con captura real) y `sitemap.xml`;
   comprobado en la web publicada. README en inglés y español.
 - Documentación del proyecto (`CLAUDE.md`, `PLAN.md`, `SESSIONS.md`, `docs/datos-y-fuentes.md`); original de las notas respaldado.
@@ -36,6 +38,6 @@
 - Las ventanas modales (`<dialog>`) van en la capa superior: para que un cursor de grabación se vea encima hay que usar `popover`.
 
 **Siguiente**
-1. Repetir la prueba sin conexión en un **móvil real** (modo avión): el motor ya está comprobado en escritorio.
-2. Decidir lo del **Bizum a la vista** (mostrarlo solo al copiar / enlace de Revolut) y aplicarlo en landing, Nextren y David Planner.
-3. Café en David Planner. Después, autobuses (mirar primero si el Consorcio publica los horarios).
+1. Decidir lo del **Bizum a la vista** (mostrarlo solo al copiar / enlace de Revolut) y aplicarlo en landing, Nextren y David Planner.
+2. Café en David Planner.
+3. Autobuses (mirar primero si el Consorcio publica los horarios) y, si se quiere, el enlace «Otros proyectos» en los demás footers.

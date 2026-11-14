@@ -15,7 +15,7 @@
 | 9 | Cabecera: reloj centrado, píldora ES\|EN + taza + luna del mismo tipo | ✅ |
 | 10 | Añadido al CV, al README del perfil y `preview.png` en los 8 repos de proyectos | ✅ |
 | 11 | Vídeo promo (EN + subtítulos ES, voz Ryan, datos de pago difuminados) | ✅ |
-| 12 | Probar sin conexión: ✅ en Chrome de escritorio con el servidor apagado de verdad (3 URLs + control negativo). 🔲 **Repetir en un móvil real** (el CV y el perfil ya dicen «sin conexión») | 🔲 |
+| 12 | Probar sin conexión: ✅ en Chrome de escritorio con el servidor apagado (3 URLs + control negativo) y ✅ en el **móvil real** (Nando, 14-nov 11:51, sin datos ni wifi: abre y recalcula los trenes con la hora actual; el de las 11:50 ya no sale) | ✅ |
 | 13 | Meta SEO + Open Graph: `description`, `canonical`, `og:*`, `twitter:card`, JSON-LD, imagen 1200×630 y `sitemap.xml` (sin `hreflang`: es una sola URL con idioma por botón; `robots.txt` en subruta no lo lee nadie) | ✅ |
 | 14 | `README.md` (EN) y `README.es.md` del repo | ✅ |
 | 15 | Café propio en **David Planner** (tiene `lang-es/en`, tests y CLAUDE.md propios: leerlos antes) | 🔲 |
