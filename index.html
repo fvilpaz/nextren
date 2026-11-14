@@ -45,6 +45,7 @@
     <div class="credit">
       <span>Nextren &copy; 2026 · <strong>Fernando Vilas Paz</strong></span>
       <div class="credit-links">
+        <button type="button" class="cafe" id="cafe-btn" title="Invítame a un café"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a3 3 0 010 6h-1"/><path d="M3 8h14v6a5 5 0 01-5 5H8a5 5 0 01-5-5V8z"/><path d="M7 2v3M11 2v3M15 2v3"/></svg>Invítame a un café</button>
         <a href="https://github.com/fvilpaz" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/fernando-vilas-paz-1626901a9" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://fvilpaz.github.io/cv/" target="_blank" rel="noopener">CV</a>
@@ -53,6 +54,28 @@
   </footer>
 </div>
 
+<dialog id="cafe-dlg" aria-labelledby="cafe-t">
+  <div class="cafe-head">
+    <h2 id="cafe-t">Invítame a un café</h2>
+    <button type="button" class="cafe-x" id="cafe-close" aria-label="Cerrar">&times;</button>
+  </div>
+  <p class="cafe-p">Nextren es gratis. Si te ha sido útil y quieres apoyarlo, puedes mandarme un café. Sin cuenta y sin registro.</p>
+  <div class="cafe-card">
+    <div class="cafe-top"><span>Bizum</span><small>Lo más fácil</small></div>
+    <div class="cafe-addr">663 399 548</div>
+    <button type="button" class="cafe-copy" data-addr="663399548">Copiar número</button>
+  </div>
+  <div class="cafe-card">
+    <div class="cafe-top"><span>USDC · Polygon / Base</span><small>Fees mínimas</small></div>
+    <div class="cafe-addr">0x5fCa77427985555668eE254eb9f87504F176947D</div>
+    <button type="button" class="cafe-copy" data-addr="0x5fCa77427985555668eE254eb9f87504F176947D">Copiar dirección</button>
+  </div>
+  <div class="cafe-card">
+    <div class="cafe-top"><span>USDC · Solana</span><small>Fees casi 0</small></div>
+    <div class="cafe-addr">GWcKUeGzYft7rHhJDEBcrzf3YwCtsBgaVC5u54ohxAfT</div>
+    <button type="button" class="cafe-copy" data-addr="GWcKUeGzYft7rHhJDEBcrzf3YwCtsBgaVC5u54ohxAfT">Copiar dirección</button>
+  </div>
+</dialog>
 <script src="app.js"></script>
 </body>
 </html>

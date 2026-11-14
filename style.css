@@ -53,5 +53,17 @@ footer{margin-top:14px;color:var(--mut);font-size:.78rem;line-height:1.5}
 footer a{color:var(--acc)}
 .credit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
 .credit strong{color:var(--txt)}
-.credit-links{display:flex;gap:18px}
+.credit-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.credit-links .cafe{display:inline-flex;align-items:center;gap:7px;color:var(--ok);background:none;border:0;font:inherit;font-weight:600;cursor:pointer;padding:10px 0}
+dialog{margin:auto;width:min(92vw,440px);max-height:90vh;overflow:auto;background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:18px;padding:20px}
+dialog::backdrop{background:rgba(3,8,18,.72)}
+.cafe-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cafe-head h2{font-size:1.15rem}
+.cafe-x{background:none;border:0;color:var(--mut);font-size:1.8rem;line-height:1;width:44px;height:44px;cursor:pointer}
+.cafe-p{color:var(--mut);font-size:.9rem;line-height:1.5;margin-bottom:14px}
+.cafe-card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.cafe-top{display:flex;justify-content:space-between;gap:8px;font-weight:700;font-size:.9rem}
+.cafe-top small{color:var(--ok);font-weight:500}
+.cafe-addr{margin:8px 0 10px;font-family:ui-monospace,Consolas,monospace;font-size:.82rem;color:var(--mut);word-break:break-all}
+.cafe-copy{width:100%;min-height:44px;background:var(--acc);color:#04121f;border:0;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer}
 .credit-links a{display:inline-block;padding:10px 0;text-decoration:none;font-weight:600}

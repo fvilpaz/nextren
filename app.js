@@ -78,4 +78,15 @@ function scrollNext(){
   if(r) w.scrollTop = Math.max(0, r.offsetTop - w.clientHeight/2 + r.offsetHeight/2);
 }
 fillStops(); tick(); scrollNext(); setInterval(tick,30000);
+/* ===== Café ===== */
+const dlg = $("cafe-dlg");
+$("cafe-btn").onclick = () => dlg.showModal();
+$("cafe-close").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); }); // clic fuera = cerrar
+document.querySelectorAll(".cafe-copy").forEach(b => b.onclick = async () => {
+  const txt = b.textContent;
+  try { await navigator.clipboard.writeText(b.dataset.addr); b.textContent = "¡Copiado!"; }
+  catch { b.textContent = "No se pudo copiar"; }
+  setTimeout(() => { b.textContent = txt; }, 1600);
+});
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
