@@ -96,7 +96,7 @@ dialog::backdrop{background:var(--shade)}
 .ctrl{display:flex;gap:8px}
 .ctrl-btn{width:34px;height:34px;display:grid;place-items:center;background:transparent;color:var(--mut);border:1px solid transparent;border-radius:17px;cursor:pointer;transition:.15s;opacity:.85}
 .ctrl-btn:hover{opacity:1;border-color:var(--line);color:var(--acc)}
-.cafe-top:hover{color:var(--ok)}
+.cafe-ico:hover{color:var(--ok)}
 #theme-btn{width:34px}
 :root[data-theme="light"] .ico-moon{display:none}
 :root:not([data-theme="light"]) .ico-sun{display:none}
