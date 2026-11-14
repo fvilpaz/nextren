@@ -20,6 +20,7 @@ const hhmm = x => { x%=1440; return String(Math.floor(x/60)).padStart(2,"0")+":"
 const ALL = STOPS.ida.map(([n])=>n); // orden geográfico Alameda → Fuengirola
 /* Festivo del "día de servicio": de 00:00 a 03:00 sigue el servicio de ayer (igual que nowMin/render). */
 function festivoHoy(){
+  if (location.search.includes("festivo")) return { es: "día de prueba", en: "test day" }; // vista previa: abrir con ?festivo
   const d = new Date(); if (d.getHours() < 3) d.setDate(d.getDate() - 1);
   const k = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
   return FESTIVOS[k] || null;
