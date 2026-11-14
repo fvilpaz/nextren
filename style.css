@@ -50,6 +50,9 @@ td.lv span{background:var(--warn);color:#201500;border-radius:6px;padding:1px 6p
   .tablewrap{max-height:55vh}
 }
 footer{margin-top:14px;color:var(--mut);font-size:.78rem;line-height:1.5}
+.aviso{background:rgba(251,191,36,.12);border:1px solid var(--warn);border-radius:14px;padding:12px 14px;margin-bottom:16px;font-size:.9rem;line-height:1.5}
+.aviso strong{color:var(--warn)}
+.aviso a{display:inline-block;margin-top:6px;padding:6px 0;font-weight:700;color:var(--warn)}
 footer a{color:var(--acc)}
 .credit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
 .credit strong{color:var(--txt)}

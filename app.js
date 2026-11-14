@@ -18,7 +18,13 @@ const TRAINS = {
 const $ = id => document.getElementById(id);
 const hhmm = x => { x%=1440; return String(Math.floor(x/60)).padStart(2,"0")+":"+String(x%60).padStart(2,"0"); };
 const ALL = STOPS.ida.map(([n])=>n); // orden geográfico Alameda → Fuengirola
-const st = { d:"ida", w:(()=>{const g=new Date().getDay();return (g==0||g==6)?"fs":"lv";})(), from:"Alameda", to:"Fuengirola", stop:0 };
+/* Festivo del "día de servicio": de 00:00 a 03:00 sigue el servicio de ayer (igual que nowMin/render). */
+function festivoHoy(){
+  const d = new Date(); if (d.getHours() < 3) d.setDate(d.getDate() - 1);
+  const k = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  return FESTIVOS[k] || null;
+}
+const st = { d:"ida", w:(()=>{const g=new Date().getDay();return (g==0||g==6||festivoHoy())?"fs":"lv";})(), from:"Alameda", to:"Fuengirola", stop:0 };
 const offOf = (d,name) => STOPS[d].find(([n])=>n===name)[1];
 
 function fillStops(){
@@ -34,6 +40,9 @@ function rows(){
 function nowMin(){ const d=new Date(); return d.getHours()*60+d.getMinutes(); }
 function render(){
   document.querySelectorAll("#dayseg button").forEach(b=>b.classList.toggle("on",b.dataset.w===st.w));
+  const fest = festivoHoy(), av = $("aviso");
+  av.hidden = !fest;
+  if (fest) av.innerHTML = `<strong>Hoy es festivo (${fest.es}).</strong> Se muestra el horario de sábado, domingo y festivo, pero Renfe puede modificar trenes: asegúrate antes de salir.<br><a href="https://www.renfe.com/es/es/cercanias/cercanias-malaga/horarios" target="_blank" rel="noopener">Comprobar en Renfe ↗</a>`;
   $("tab-ida").classList.toggle("on",st.from==="Alameda"&&st.to==="Fuengirola");
   $("tab-vuelta").classList.toggle("on",st.from==="Fuengirola"&&st.to==="Alameda");
   if(st.from===st.to){
