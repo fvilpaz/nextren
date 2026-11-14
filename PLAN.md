@@ -15,9 +15,9 @@
 | 9 | Cabecera: reloj centrado, píldora ES\|EN + taza + luna del mismo tipo | ✅ |
 | 10 | Añadido al CV, al README del perfil y `preview.png` en los 8 repos de proyectos | ✅ |
 | 11 | Vídeo promo (EN + subtítulos ES, voz Ryan, datos de pago difuminados) | ✅ |
-| 12 | **Probar sin conexión en un móvil real** (el CV y el perfil ya dicen «sin conexión») | 🔲 |
-| 13 | **Meta SEO + Open Graph** (`description`, `canonical`, `og:*`, `twitter:card`, imagen 1200×630, idioma alternativo) | 🔲 |
-| 14 | **README.md** del repo (es público y lo enlazan el CV y el perfil) | 🔲 |
+| 12 | Probar sin conexión: ✅ en Chrome de escritorio con el servidor apagado de verdad (3 URLs + control negativo). 🔲 **Repetir en un móvil real** (el CV y el perfil ya dicen «sin conexión») | 🔲 |
+| 13 | Meta SEO + Open Graph: `description`, `canonical`, `og:*`, `twitter:card`, JSON-LD, imagen 1200×630 y `sitemap.xml` (sin `hreflang`: es una sola URL con idioma por botón; `robots.txt` en subruta no lo lee nadie) | ✅ |
+| 14 | `README.md` (EN) y `README.es.md` del repo | ✅ |
 | 15 | Café propio en **David Planner** (tiene `lang-es/en`, tests y CLAUDE.md propios: leerlos antes) | 🔲 |
 | 16 | Decidir qué hacer con el **Bizum a la vista** (mostrarlo solo al copiar / sustituirlo por enlace de Revolut) — en landing, Nextren y David Planner | 🔲 |
 | 17 | Cerrar lagunas de `docs/datos-y-fuentes.md` (domingo noche, festivos entre semana, sábado noche Málaga→Fuengirola) | 🔲 |
@@ -34,3 +34,5 @@
 - Vídeo vertical 9:16 y un `.srt` aparte para LinkedIn.
 - Guardar los scripts que generan el vídeo (grabación con Chrome sin ventana + voz + subtítulos) por si hay que rehacerlo.
 - Que el idioma inicial siga al del navegador.
+- Enviar `sitemap.xml` a Google Search Console (lo decide Nando; hace falta su cuenta).
+- Si se vuelve a compartir el enlace en WhatsApp: usar `?v=2` al final para saltarse la vista previa vieja que WhatsApp guarda por dirección.

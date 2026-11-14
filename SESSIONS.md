@@ -11,6 +11,11 @@
 - Aviso de festivo con calendario BOJA 2026-27 (24 fechas, 20 comprobadas contra el día de la semana del decreto) y `?festivo`.
 - Tema claro/oscuro, idioma ES/EN, cabecera rehecha (reloj al centro, tres botones iguales).
 - CV y README del perfil con Nextren; `preview.png` subido a 8 repos; vídeo promo con voz Ryan y datos de pago difuminados.
+- **Prueba sin conexión** en Chrome de escritorio: servidor local, service worker instalado, servidor apagado de verdad, recarga →
+  3 tarjetas, 50 filas, estilos, i18n y festivos cargados; control negativo (página inexistente) falla como debe. **Falta el móvil real.**
+- SEO y redes: `description`, canonical, 11 etiquetas `og`, Twitter Card, JSON-LD, `og-image.png` 1200×630 (con captura real) y `sitemap.xml`;
+  comprobado en la web publicada. README en inglés y español.
+- Documentación del proyecto (`CLAUDE.md`, `PLAN.md`, `SESSIONS.md`, `docs/datos-y-fuentes.md`); original de las notas respaldado.
 - Verificado: 8 URLs de imagen en 200; tema y idioma se recuerdan (dos cargas seguidas en el mismo perfil);
   alineación de pestañas/selectores/conmutador medida (mismos bordes); huecos de botones medidos (8/8 px, iconos a 24 px).
 
@@ -26,9 +31,11 @@
 - **Choque de nombres de clase**: `.cafe-top` (cabecera de las tarjetas, con `justify-content:space-between`) descentró el icono de la taza. Una caja puede medir bien y el icono estar mal colocado.
 - En PowerShell `$w` y `$W` son la **misma variable**; un script se colgó en un bucle por eso.
 - Un resultado **vacío no es un dato**: `--dump-dom` devolvió 0 caracteres y el «control» parecía un fallo de la app.
+- Para probar «sin conexión» de verdad no basta emular la red de la página: el service worker tiene su propia red. Se sirve la app en local y se **apaga el servidor**.
+- `robots.txt` solo lo lee el rastreador en la **raíz del dominio**; en una subruta de `github.io` no sirve de nada.
 - Las ventanas modales (`<dialog>`) van en la capa superior: para que un cursor de grabación se vea encima hay que usar `popover`.
 
 **Siguiente**
-1. Probar la app **sin conexión en un móvil real** (modo avión) — el CV ya lo afirma.
-2. Meta SEO + Open Graph con imagen 1200×630.
-3. README del repo, café en David Planner y decidir lo del Bizum a la vista.
+1. Repetir la prueba sin conexión en un **móvil real** (modo avión): el motor ya está comprobado en escritorio.
+2. Decidir lo del **Bizum a la vista** (mostrarlo solo al copiar / enlace de Revolut) y aplicarlo en landing, Nextren y David Planner.
+3. Café en David Planner. Después, autobuses (mirar primero si el Consorcio publica los horarios).

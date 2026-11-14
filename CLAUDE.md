@@ -34,6 +34,8 @@ Origen: una web de un solo archivo en el Escritorio (13-nov-2026) que Nando conv
 ## Estructura
 ```
 index.html  style.css  app.js  i18n.js  theme.js  festivos.js   ← la app
-sw.js  manifest.webmanifest  icon-192.png  icon-512.png  preview.png   ← PWA
+sw.js  manifest.webmanifest  icon-192.png  icon-512.png   ← PWA
+preview.png (imagen para freeCodeCamp)  og-image.png (1200×630, redes)  sitemap.xml
+README.md (EN)  README.es.md  CLAUDE.md  PLAN.md  SESSIONS.md
 docs/datos-y-fuentes.md   ← de dónde salen las horas, qué está verificado y qué no
 ```
