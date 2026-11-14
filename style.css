@@ -54,7 +54,9 @@ tr.nx td{background:var(--nx)}
 td.lv span{background:var(--chip);color:#201500;border-radius:6px;padding:1px 6px;font-size:.7rem;font-weight:700}
 @media (max-width:700px){
   body{padding:14px 10px 30px}
-  h1{font-size:1.15rem}
+  h1{font-size:1.05rem;gap:8px}
+  .ctrl{gap:2px}
+  .badge{font-size:1rem;padding:2px 9px}
   header{grid-template-columns:1fr auto;grid-template-areas:"titulo botones" "reloj reloj";row-gap:14px}
   header h1{grid-area:titulo}
   header .ctrl{grid-area:botones}
@@ -94,6 +96,7 @@ dialog::backdrop{background:var(--shade)}
 .ctrl{display:flex;gap:8px}
 .ctrl-btn{width:34px;height:34px;display:grid;place-items:center;background:transparent;color:var(--mut);border:1px solid transparent;border-radius:17px;cursor:pointer;transition:.15s;opacity:.85}
 .ctrl-btn:hover{opacity:1;border-color:var(--line);color:var(--acc)}
+.cafe-top:hover{color:var(--ok)}
 #theme-btn{width:34px}
 :root[data-theme="light"] .ico-moon{display:none}
 :root:not([data-theme="light"]) .ico-sun{display:none}
