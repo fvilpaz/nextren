@@ -84,6 +84,7 @@ dialog::backdrop{background:var(--shade)}
 .ctrl{display:flex;gap:8px}
 .ctrl-btn{width:44px;height:44px;display:grid;place-items:center;background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:50%;cursor:pointer;transition:.15s}
 .ctrl-btn:hover{border-color:var(--acc);color:var(--acc)}
+#theme-btn{width:56px;border-radius:22px}
 :root[data-theme="light"] .ico-moon{display:none}
 :root:not([data-theme="light"]) .ico-sun{display:none}
 .lang-btn{display:inline-flex;align-items:center;width:auto;padding:0 5px;gap:2px;border-radius:22px;font-size:.8rem;font-weight:700}
