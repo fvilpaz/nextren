@@ -99,4 +99,16 @@ document.querySelectorAll(".cafe-copy").forEach(b => b.onclick = async () => {
   catch { b.textContent = "No se pudo copiar"; }
   setTimeout(() => { b.textContent = txt; }, 1600);
 });
+/* ===== Tema ===== */
+function pintaBotonTema(){
+  const claro = document.documentElement.dataset.theme === "light";
+  $("theme-btn").setAttribute("aria-label", claro ? "Cambiar a tema oscuro" : "Cambiar a tema claro");
+}
+$("theme-btn").onclick = () => {
+  const nuevo = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  aplicarTema(nuevo);
+  try { localStorage.setItem("nextren-tema", nuevo); } catch {}
+  pintaBotonTema();
+};
+pintaBotonTema();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
