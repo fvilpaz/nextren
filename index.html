@@ -19,6 +19,7 @@
   </header>
 
   <div class="ctrl">
+    <button type="button" class="ctrl-btn lang-btn" id="lang-btn" aria-label="Cambiar idioma a inglés" data-i18n-aria="lang.aria"><span data-l="es" class="on">ES</span><span data-l="en">EN</span></button>
     <button type="button" class="ctrl-btn" id="theme-btn" aria-label="Cambiar a tema claro">
       <svg class="ico-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="ico-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
@@ -26,38 +27,38 @@
   </div>
 
   <div class="tabs">
-    <button class="tab" id="tab-ida">Málaga → Fuengirola<small>sale de Alameda</small></button>
-    <button class="tab" id="tab-vuelta">Fuengirola → Málaga<small>sale de Fuengirola</small></button>
+    <button class="tab" id="tab-ida">Málaga → Fuengirola<small data-i18n="tab.idaSub">sale de Alameda</small></button>
+    <button class="tab" id="tab-vuelta">Fuengirola → Málaga<small data-i18n="tab.vueltaSub">sale de Fuengirola</small></button>
   </div>
 
   <div class="bar pick">
-    <label class="lbl">Desde: <select id="from"></select></label>
-    <label class="lbl">Hasta: <select id="to"></select></label>
+    <label class="lbl"><span data-i18n="lbl.from">Desde:</span> <select id="from"></select></label>
+    <label class="lbl"><span data-i18n="lbl.to">Hasta:</span> <select id="to"></select></label>
   </div>
   <div class="bar">
     <div class="seg" id="dayseg">
-      <button data-w="lv">Lun–Vie</button>
-      <button data-w="fs">Sáb / Dom / Festivo</button>
+      <button data-w="lv" data-i18n="seg.lv">Lun–Vie</button>
+      <button data-w="fs" data-i18n="seg.fs">Sáb / Dom / Festivo</button>
     </div>
   </div>
 
   <div class="aviso" id="aviso" role="status" hidden></div>
 
-  <div class="sec">Próximos trenes</div>
+  <div class="sec" data-i18n="sec.next">Próximos trenes</div>
   <div class="next" id="next"></div>
 
-  <div class="sec">Horario completo</div>
+  <div class="sec" data-i18n="sec.full">Horario completo</div>
   <div class="tablewrap"><table id="tbl"></table></div>
 
   <footer>
-    <strong>Horario teórico:</strong> no incluye retrasos, obras ni cancelaciones. Puede variar ±1 min según el tren.<br>
-    <strong>Salidas de cabecera:</strong> <a href="https://siu.ctmam.ctan.es/es/movil/horarios_lineas_tabla.php?linea=160">Consorcio de Transportes Málaga · línea 160 (C-1)</a>, válido desde 23/08/2026. Solo distingue «diario» y «L-V», así que sábados, domingos y festivos muestran los trenes diarios.<br>
-    <strong>Paradas intermedias</strong> (17 por sentido): itinerario de <a href="https://www.renfe.com/es/es/cercanias/cercanias-malaga/horarios">Renfe Cercanías Málaga</a>, con el mismo desfase desde la cabecera para todos los trenes y contrastado con Google Maps.<br>
-    <strong>Festivos:</strong> calendario de fiestas laborales de Andalucía <a href="https://www.juntadeandalucia.es/boja/2025/93/1">2026</a> y <a href="https://www.juntadeandalucia.es/eboja/2026/84/BOJA26-084-00002-5812-01_00337048.pdf">2027</a> (BOJA), sin festivos locales. En festivo se usa el horario de sábado y domingo; Renfe puede cambiarlo, compruébalo antes de salir. Zonas A–E.
+    <p data-i18n-html="foot.1"><strong>Horario teórico:</strong> no incluye retrasos, obras ni cancelaciones. Puede variar ±1 min según el tren.</p>
+    <p data-i18n-html="foot.2"><strong>Salidas de cabecera:</strong> <a href="https://siu.ctmam.ctan.es/es/movil/horarios_lineas_tabla.php?linea=160">Consorcio de Transportes Málaga · línea 160 (C-1)</a>, válido desde 23/08/2026. Solo distingue «diario» y «L-V», así que sábados, domingos y festivos muestran los trenes diarios.</p>
+    <p data-i18n-html="foot.3"><strong>Paradas intermedias</strong> (17 por sentido): itinerario de <a href="https://www.renfe.com/es/es/cercanias/cercanias-malaga/horarios">Renfe Cercanías Málaga</a>, con el mismo desfase desde la cabecera para todos los trenes y contrastado con Google Maps.</p>
+    <p data-i18n-html="foot.4"><strong>Festivos:</strong> calendario de fiestas laborales de Andalucía <a href="https://www.juntadeandalucia.es/boja/2025/93/1">2026</a> y <a href="https://www.juntadeandalucia.es/eboja/2026/84/BOJA26-084-00002-5812-01_00337048.pdf">2027</a> (BOJA), sin festivos locales. En festivo se usa el horario de sábado y domingo; Renfe puede cambiarlo, compruébalo antes de salir. Zonas A–E.</p>
     <div class="credit">
       <span>Nextren &copy; 2026 · <strong>Fernando Vilas Paz</strong></span>
       <div class="credit-links">
-        <button type="button" class="cafe" id="cafe-btn" title="Invítame a un café"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a3 3 0 010 6h-1"/><path d="M3 8h14v6a5 5 0 01-5 5H8a5 5 0 01-5-5V8z"/><path d="M7 2v3M11 2v3M15 2v3"/></svg>Invítame a un café</button>
+        <button type="button" class="cafe" id="cafe-btn" title="Invítame a un café" data-i18n-title="cafe.btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a3 3 0 010 6h-1"/><path d="M3 8h14v6a5 5 0 01-5 5H8a5 5 0 01-5-5V8z"/><path d="M7 2v3M11 2v3M15 2v3"/></svg><span data-i18n="cafe.btn">Invítame a un café</span></button>
         <a href="https://github.com/fvilpaz" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/fernando-vilas-paz-1626901a9" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://fvilpaz.github.io/cv/" target="_blank" rel="noopener">CV</a>
@@ -68,27 +69,28 @@
 
 <dialog id="cafe-dlg" aria-labelledby="cafe-t">
   <div class="cafe-head">
-    <h2 id="cafe-t">Invítame a un café</h2>
-    <button type="button" class="cafe-x" id="cafe-close" aria-label="Cerrar">&times;</button>
+    <h2 id="cafe-t" data-i18n="cafe.btn">Invítame a un café</h2>
+    <button type="button" class="cafe-x" id="cafe-close" aria-label="Cerrar" data-i18n-aria="close">&times;</button>
   </div>
-  <p class="cafe-p">Nextren es gratis. Si te ha sido útil y quieres apoyarlo, puedes mandarme un café. Sin cuenta y sin registro.</p>
+  <p class="cafe-p" data-i18n="cafe.p">Nextren es gratis. Si te ha sido útil y quieres apoyarlo, puedes mandarme un café. Sin cuenta y sin registro.</p>
   <div class="cafe-card">
-    <div class="cafe-top"><span>Bizum</span><small>Lo más fácil</small></div>
+    <div class="cafe-top"><span>Bizum</span><small data-i18n="cafe.easy">Lo más fácil</small></div>
     <div class="cafe-addr">663 399 548</div>
-    <button type="button" class="cafe-copy" data-addr="663399548">Copiar número</button>
+    <button type="button" class="cafe-copy" data-addr="663399548" data-i18n="copy.num">Copiar número</button>
   </div>
   <div class="cafe-card">
-    <div class="cafe-top"><span>USDC · Polygon / Base</span><small>Fees mínimas</small></div>
+    <div class="cafe-top"><span>USDC · Polygon / Base</span><small data-i18n="cafe.fee1">Fees mínimas</small></div>
     <div class="cafe-addr">0x5fCa77427985555668eE254eb9f87504F176947D</div>
-    <button type="button" class="cafe-copy" data-addr="0x5fCa77427985555668eE254eb9f87504F176947D">Copiar dirección</button>
+    <button type="button" class="cafe-copy" data-addr="0x5fCa77427985555668eE254eb9f87504F176947D" data-i18n="copy.addr">Copiar dirección</button>
   </div>
   <div class="cafe-card">
-    <div class="cafe-top"><span>USDC · Solana</span><small>Fees casi 0</small></div>
+    <div class="cafe-top"><span>USDC · Solana</span><small data-i18n="cafe.fee2">Fees casi 0</small></div>
     <div class="cafe-addr">GWcKUeGzYft7rHhJDEBcrzf3YwCtsBgaVC5u54ohxAfT</div>
-    <button type="button" class="cafe-copy" data-addr="GWcKUeGzYft7rHhJDEBcrzf3YwCtsBgaVC5u54ohxAfT">Copiar dirección</button>
+    <button type="button" class="cafe-copy" data-addr="GWcKUeGzYft7rHhJDEBcrzf3YwCtsBgaVC5u54ohxAfT" data-i18n="copy.addr">Copiar dirección</button>
   </div>
 </dialog>
 <script src="festivos.js"></script>
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

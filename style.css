@@ -82,6 +82,9 @@ dialog::backdrop{background:var(--shade)}
 .ctrl{display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px}
 .ctrl-btn{width:44px;height:44px;display:grid;place-items:center;background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:50%;cursor:pointer;transition:.15s}
 .ctrl-btn:hover{border-color:var(--acc);color:var(--acc)}
-:root[data-theme="light"] .ico-sun{display:none}
-:root:not([data-theme="light"]) .ico-moon{display:none}
+:root[data-theme="light"] .ico-moon{display:none}
+:root:not([data-theme="light"]) .ico-sun{display:none}
+.lang-btn{display:inline-flex;align-items:center;width:auto;padding:0 5px;gap:2px;border-radius:22px;font-size:.8rem;font-weight:700}
+.lang-btn span{padding:7px 10px;border-radius:16px;color:var(--mut)}
+.lang-btn span.on{background:var(--acc);color:var(--on-acc)}
 .credit-links a{display:inline-block;padding:10px 0;text-decoration:none;font-weight:600}

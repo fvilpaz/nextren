@@ -43,11 +43,11 @@ function render(){
   document.querySelectorAll("#dayseg button").forEach(b=>b.classList.toggle("on",b.dataset.w===st.w));
   const fest = festivoHoy(), av = $("aviso");
   av.hidden = !fest;
-  if (fest) av.innerHTML = `<strong>Hoy es festivo (${fest.es}).</strong> Se muestra el horario de sábado, domingo y festivo, pero Renfe puede modificar trenes: asegúrate antes de salir.<br><a href="https://www.renfe.com/es/es/cercanias/cercanias-malaga/horarios" target="_blank" rel="noopener">Comprobar en Renfe ↗</a>`;
+  if (fest) av.innerHTML = tx("aviso", { name: fest[lang] });
   $("tab-ida").classList.toggle("on",st.from==="Alameda"&&st.to==="Fuengirola");
   $("tab-vuelta").classList.toggle("on",st.from==="Fuengirola"&&st.to==="Alameda");
   if(st.from===st.to){
-    $("next").innerHTML=`<div class="n"><div class="t">—</div><div class="s">Elige una parada de origen y otra de destino distintas.</div></div>`;
+    $("next").innerHTML=`<div class="n"><div class="t">—</div><div class="s">${tx("pickDiff")}</div></div>`;
     $("tbl").innerHTML=""; return;
   }
   // el sentido se deduce: origen antes que destino en la línea = ida (Alameda→Fuengirola)
@@ -61,21 +61,22 @@ function render(){
   const nxt=upcoming[0];
   // próximos
   $("next").innerHTML = upcoming.length ? upcoming.slice(0,3).map((t,i)=>{
-    const d=t-now, txt = d===0?"¡ahora!":(d<60? d+" min" : Math.floor(d/60)+" h "+(d%60)+" min");
-    return `<div class="n ${i?"":"first"}"><div class="t">${hhmm(t)} → ${hhmm(t+trip)}</div><div class="m">sale en ${txt}</div><div class="a">viaje ${trip} min</div><div class="s">${st.from} → ${st.to}</div></div>`;
-  }).join("") : `<div class="n"><div class="t">—</div><div class="s">No quedan más trenes hoy. El primero de mañana sale a las ${hhmm(list[0][0]+off)}.</div></div>`;
+    const d=t-now, txt = d===0?tx("now"):(d<60? d+" min" : Math.floor(d/60)+" h "+(d%60)+" min");
+    return `<div class="n ${i?"":"first"}"><div class="t">${hhmm(t)} → ${hhmm(t+trip)}</div><div class="m">${tx("dep", { x: txt })}</div><div class="a">${tx("trip", { n: trip })}</div><div class="s">${st.from} → ${st.to}</div></div>`;
+  }).join("") : `<div class="n"><div class="t">—</div><div class="s">${tx("noMore", { h: hhmm(list[0][0]+off) })}</div></div>`;
   // tabla
   let h="<tr><th>#</th>"+stops.map(([n],i)=>`<th class="${n===st.from||n===st.to?"key":""}">${n}</th>`).join("")+"<th></th></tr>";
   list.forEach(([t,lv],i)=>{
     const cls = (t+off)<now ? "past" : ((t+off)===nxt?"nx":"");
-    h+=`<tr class="${cls}" ${(t+off)===nxt?'id="nxrow"':''}><td>${i+1}</td>`+stops.map(([n,o])=>`<td class="${n===st.from||n===st.to?"key":""}">${hhmm(t+o)}</td>`).join("")+`<td class="lv">${lv?"<span>L-V</span>":""}</td></tr>`;
+    h+=`<tr class="${cls}" ${(t+off)===nxt?'id="nxrow"':''}><td>${i+1}</td>`+stops.map(([n,o])=>`<td class="${n===st.from||n===st.to?"key":""}">${hhmm(t+o)}</td>`).join("")+`<td class="lv">${lv?`<span>${tx("chip.lv")}</span>`:""}</td></tr>`;
   });
   $("tbl").innerHTML=h;
 }
 function tick(){
   const d=new Date();
-  $("clock").textContent=d.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"});
-  $("date").textContent=d.toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
+  const loc = lang==="en" ? "en-GB" : "es-ES";
+  $("clock").textContent=d.toLocaleTimeString(loc,{hour:"2-digit",minute:"2-digit"});
+  $("date").textContent=d.toLocaleDateString(loc,{weekday:"long",day:"numeric",month:"long"});
   render();
 }
 document.querySelectorAll("#dayseg button").forEach(b=>b.onclick=()=>{st.w=b.dataset.w;render();scrollNext();});
@@ -94,15 +95,14 @@ $("cafe-btn").onclick = () => dlg.showModal();
 $("cafe-close").onclick = () => dlg.close();
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); }); // clic fuera = cerrar
 document.querySelectorAll(".cafe-copy").forEach(b => b.onclick = async () => {
-  const txt = b.textContent;
-  try { await navigator.clipboard.writeText(b.dataset.addr); b.textContent = "¡Copiado!"; }
-  catch { b.textContent = "No se pudo copiar"; }
-  setTimeout(() => { b.textContent = txt; }, 1600);
+  try { await navigator.clipboard.writeText(b.dataset.addr); b.textContent = tx("copied"); }
+  catch { b.textContent = tx("copyFail"); }
+  setTimeout(() => { b.textContent = tx(b.dataset.i18n); }, 1600);
 });
 /* ===== Tema ===== */
 function pintaBotonTema(){
   const claro = document.documentElement.dataset.theme === "light";
-  $("theme-btn").setAttribute("aria-label", claro ? "Cambiar a tema oscuro" : "Cambiar a tema claro");
+  $("theme-btn").setAttribute("aria-label", tx(claro ? "theme.toDark" : "theme.toLight"));
 }
 $("theme-btn").onclick = () => {
   const nuevo = document.documentElement.dataset.theme === "light" ? "dark" : "light";
@@ -110,5 +110,15 @@ $("theme-btn").onclick = () => {
   try { localStorage.setItem("nextren-tema", nuevo); } catch {}
   pintaBotonTema();
 };
+/* ===== Idioma ===== */
+$("lang-btn").onclick = () => {
+  const nuevo = lang === "es" ? "en" : "es";
+  aplicarIdioma(nuevo);
+  try { localStorage.setItem(LANG_KEY, nuevo); } catch {}
+  pintaBotonTema();
+  tick();
+};
+aplicarIdioma(lang);
 pintaBotonTema();
+tick();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
