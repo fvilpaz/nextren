@@ -18,7 +18,7 @@ Origen: una web de un solo archivo en el Escritorio (13-nov-2026) que Nando conv
 | Sentido | Se deduce solo: origen antes que destino en la línea = ida. Las pestañas Málaga→Fuengirola son **atajos**, no el mecanismo. |
 | Festivos | `festivos.js` = calendario andaluz del BOJA (autonómico, **sin festivos locales**). Se **renueva cada diciembre** (+ `FESTIVOS_HASTA`). `?festivo` en la URL previsualiza el aviso. |
 | Tema e idioma | Oscuro y español por defecto, se recuerdan en `localStorage` (`nextren-tema`, `nextren-lang`). Nombres de parada sin traducir. |
-| Café | Ventana propia con Bizum + USDC (Polygon/Base y Solana). Los datos están **duplicados** en la landing de MyCryptoFolio y (cuando se haga) en David Planner: si cambian, cambiar en todos. |
+| Café | Ventana propia con **PayPal** (enlace a `paypal.me/fvilpaz`; el botón dice solo «PayPal») + USDC (Polygon/Base y Solana). **Sin Bizum** desde el 24-nov (no publicar el móvil en un repo público). Los datos están **duplicados** en la landing de MyCryptoFolio, MasterMind y David Planner: si cambian, cambiar en todos. |
 | Nombre | **Nextren** (next + tren, se pronuncia igual en ES/EN). |
 
 ## Forma de trabajar

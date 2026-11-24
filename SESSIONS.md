@@ -2,6 +2,18 @@
 
 > Lo último arriba.
 
+## 24-nov-2026 — Bizum fuera, PayPal dentro
+
+**Hecho**
+- Ventana del café: la tarjeta de Bizum pasa a **PayPal** (enlace a `paypal.me/fvilpaz`; el botón dice solo «PayPal», en ES y EN). El JS de copiar engancha solo botones (`button.cafe-copy`), no el enlace. Caché del service worker a v22.
+- Lo mismo en la landing de MyCryptoFolio, MasterMind y David Planner (que estrena café). Pasos 15 y 16 del PLAN, cerrados.
+
+**Decidido (Nando)**
+- PayPal + USDC en todas las apps; sin Bizum (el número quedaba publicado). Texto del botón: «PayPal».
+
+**Siguiente**
+- Cerrar lagunas de `docs/datos-y-fuentes.md` (paso 17).
+
 ## 14-nov-2026 — de un HTML en el Escritorio a PWA publicada
 
 **Hecho**

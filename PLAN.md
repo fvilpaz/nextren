@@ -8,7 +8,7 @@
 | 2 | Origen y destino libres entre las 17 paradas, con hora de llegada y duración | ✅ |
 | 3 | CSS y JS fuera del HTML; botones de 48 px en móvil | ✅ |
 | 4 | PWA: manifest, iconos, service worker (red primero, `no-cache`) | ✅ (offline **sin probar en móvil**) |
-| 5 | Footer con créditos y ventana de café propia (Bizum + USDC) | ✅ |
+| 5 | Footer con créditos y ventana de café propia (PayPal + USDC; Bizum quitado el 24-nov) | ✅ |
 | 6 | Aviso de festivo + calendario BOJA 2026-2027 + `?festivo` | ✅ |
 | 7 | Tema claro/oscuro (oscuro por defecto, recordado) | ✅ |
 | 8 | Idioma ES/EN con `i18n.js` | ✅ |
@@ -18,8 +18,8 @@
 | 12 | Probar sin conexión: ✅ en Chrome de escritorio con el servidor apagado (3 URLs + control negativo) y ✅ en el **móvil real** (Nando, 14-nov 11:51, sin datos ni wifi: abre y recalcula los trenes con la hora actual; el de las 11:50 ya no sale) | ✅ |
 | 13 | Meta SEO + Open Graph: `description`, `canonical`, `og:*`, `twitter:card`, JSON-LD, imagen 1200×630 y `sitemap.xml` (sin `hreflang`: es una sola URL con idioma por botón; `robots.txt` en subruta no lo lee nadie) | ✅ |
 | 14 | `README.md` (EN) y `README.es.md` del repo | ✅ |
-| 15 | Café propio en **David Planner** (tiene `lang-es/en`, tests y CLAUDE.md propios: leerlos antes) | 🔲 |
-| 16 | Decidir qué hacer con el **Bizum a la vista** (mostrarlo solo al copiar / sustituirlo por enlace de Revolut) — en landing, Nextren y David Planner | 🔲 |
+| 15 | Café propio en **David Planner** (tiene `lang-es/en`, tests y CLAUDE.md propios: leerlos antes) | ✅ (24-nov) |
+| 16 | Decidir qué hacer con el **Bizum a la vista** (mostrarlo solo al copiar / sustituirlo por enlace de Revolut) — en landing, Nextren y David Planner | ✅ (24-nov): sustituido por **PayPal** en las cuatro apps (también MasterMind) |
 | 17 | Cerrar lagunas de `docs/datos-y-fuentes.md` (domingo noche, festivos entre semana, sábado noche Málaga→Fuengirola) | 🔲 |
 | 18 | **Autobuses** (Consorcio: Fuengirola, Mijas…). Primero mirar si los horarios son accesibles; solo horarios oficiales, sin tiempo real | 🔲 |
 
