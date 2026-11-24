@@ -90,6 +90,7 @@ dialog::backdrop{background:var(--shade)}
 .cafe-p{color:var(--mut);font-size:.9rem;line-height:1.5;margin-bottom:14px}
 .cafe-card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
 .cafe-top{display:flex;justify-content:space-between;gap:8px;font-weight:700;font-size:.9rem}
+a.cafe-go{display:flex;align-items:center;justify-content:center;text-decoration:none}
 .cafe-top small{color:var(--ok);font-weight:500}
 .cafe-addr{margin:8px 0 10px;font-family:ui-monospace,Consolas,monospace;font-size:.82rem;color:var(--mut);word-break:break-all}
 .cafe-copy{width:100%;min-height:44px;background:var(--acc);color:var(--on-acc);border:0;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer}

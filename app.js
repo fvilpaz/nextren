@@ -95,7 +95,7 @@ $("cafe-btn").onclick = () => dlg.showModal();
 $("cafe-top").onclick = () => dlg.showModal();
 $("cafe-close").onclick = () => dlg.close();
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); }); // clic fuera = cerrar
-document.querySelectorAll(".cafe-copy").forEach(b => b.onclick = async () => {
+document.querySelectorAll("button.cafe-copy").forEach(b => b.onclick = async () => {
   try { await navigator.clipboard.writeText(b.dataset.addr); b.textContent = tx("copied"); }
   catch { b.textContent = tx("copyFail"); }
   setTimeout(() => { b.textContent = tx(b.dataset.i18n); }, 1600);
